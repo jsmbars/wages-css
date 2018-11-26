@@ -99,6 +99,14 @@ $block: ".wages-form-field"
       #{$block}_role_control-reverse &
         white-space: normal
 
+    &_adjust_control-extra
+      #{$block}_role_control &,
+      #{$block}_role_control-reverse &
+        width: 150px
+
+        @media screen and (max-width: 960px)
+          width: 100px
+
     // $Common form field label MOD: size small
     &_size_s
       font-size: 12px
@@ -159,7 +167,8 @@ $block: ".wages-form-field"
 
     &:before
       #{$block}_role_search &,
-      #{$block}_role_date &
+      #{$block}_role_date &,
+      #{$block}_role_gbp &
         content: ""
         position: absolute
         top: 50%
@@ -177,8 +186,13 @@ $block: ".wages-form-field"
       #{$block}_role_date &
         content: "\e900"
 
+      #{$block}_role_gbp &
+        content: "\00A3"
+        font-family: $f-sans
+
       #{$block}_role_search#{$block}_state_error &,
-      #{$block}_role_date#{$block}_state_error &
+      #{$block}_role_date#{$block}_state_error &,
+      #{$block}_role_gbp#{$block}_state_error &
         color: $c-accent-red
 
     // $Common form field input CONTEXT: $Common form MOD: role control
@@ -208,6 +222,9 @@ $block: ".wages-form-field"
       #{$block}_role_search &,
       #{$block}_role_date &
         padding-left: 35px
+
+      #{$block}_role_gbp &
+        padding-left: 30px
 
       #{$block}_state_error &
         border-color: $c-accent-red
