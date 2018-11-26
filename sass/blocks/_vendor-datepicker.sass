@@ -1,0 +1,273 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Vendor Date Picker
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".vendor-datepicker"
+
+#{$block}
+  position: relative
+  display: block
+  width: 100%
+  max-width: 320px
+
+   // $Vendor Date Picker overlay
+  &-overlay
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 10001
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    overflow-x: hidden
+    overflow-y: auto
+    background-color: rgba(0,0,0,.75)
+
+  &-overlay &
+    z-index: 10002
+
+  // $Vendor Date Picker MOD: type single
+  &_type_single
+
+  // $Vendor Date Picker MOD: type week
+  &_type_week
+
+  // $Vendor Date Picker MOD: type range
+  &_type_range
+
+
+  // Common Overrides
+  & .ui-datepicker
+    box-sizing: border-box
+    width: 100%
+    padding: 0 20px 20px
+    font-size: 14px
+    background-color: $c-bg-light
+    border: none
+    overflow: hidden
+
+    @media screen and (max-width: 480px)
+      padding: 0 15px
+
+
+    & .ui-datepicker-header
+      position: relative
+      padding: 20px 25px
+      background: none
+      background-color: $c-bg-light
+      border: none
+
+      &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: -20px
+        right: -20px
+        display: block
+        border-bottom: 1px solid $c-border-primary
+
+
+    & .ui-datepicker-prev,
+    & .ui-datepicker-next
+      top: 50%
+      width: 20px
+      height: 20px
+      margin-top: -12px
+      cursor: pointer
+
+      & span
+        display: block
+        width: 20px
+        height: 20px
+        background-image: none
+        color: transparent
+        font-size: 0
+
+        &:before
+          content: '\e91c'
+          display: block
+          font-family: icons
+          font-size: 30px
+          line-height: 20px
+          font-weight: normal
+          color: $c-text-secondary
+          text-indent: 0
+          transition: color .3s
+
+        &:hover:before
+          color: $c-text-primary
+
+
+    & .ui-datepicker-prev
+      left: 0
+
+      @media screen and (max-width: 480px)
+        left: 15px
+
+      & span
+        text-align: left
+
+        &:before
+          content: '\e91c'
+
+
+    & .ui-datepicker-next
+      right: 0
+
+      @media screen and (max-width: 480px)
+        right: 15px
+
+      & span
+        text-align: right
+
+        &:before
+          content: '\e91b'
+
+
+    & .ui-datepicker-next-hover,
+    & .ui-datepicker-prev-hover
+      background: none
+      background-color: transparent
+      border: none
+
+
+    & .ui-datepicker-title
+      font-family: $f-sans
+      font-size: 14px
+      color: $c-text-primary
+      text-align: center
+      font-weight: 400
+
+    & select.ui-datepicker-month,
+    & select.ui-datepicker-year
+      height: 30px
+      width: 50%
+      padding: 0 25px 0 10px
+      font-family: $f-sans
+      font-size: 14px
+      color: $c-text-primary
+      font-weight: 400
+      line-height: 1.5
+      -webkit-appearance: none
+      -moz-appearance: none
+      border: 1px solid $c-border-primary
+      background-size: 9px 6px
+      background-position: right -1rem center
+      background-origin: content-box
+      background-repeat: no-repeat
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>")
+
+      @media screen and (min-width: 0\0)
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==")
+
+
+      & .react-datepicker__month-select::-ms-expand,
+      & .react-datepicker__year-select::-ms-expand
+        display: none
+
+      &:focus
+        box-shadow: 0 0 3px -1px $c-accent-blue
+
+      & option
+        font-family: $f-sans
+        color: $c-text-primary
+
+    & select.ui-datepicker-year
+      margin-left: -1px
+
+
+    & .ui-datepicker-calendar
+      position: relative
+      z-index: 1
+      width: 100%
+      margin: 0
+      border-spacing: 0
+      border: none
+
+      & thead,
+      & tbody,
+      & tfoot
+        border: none
+        background-color: transparent
+
+      & tr
+        background-color: transparent
+
+      & th
+        padding: 0
+        font-family: $f-sans
+        font-size: 14px
+        color: $c-text-primary
+        text-align: center
+        font-weight: 600
+        border-top: none
+        background-color: transparent
+
+        & span
+          display: block
+          padding: 20px 0
+
+          @media screen and (max-width: 480px)
+            padding: 20px 0 10px
+
+      & td
+        padding: 0
+        background-color: transparent
+
+        & a
+          font-family: $f-sans
+          padding: 10px
+          background: none
+          background-color: transparent
+          border: none
+          text-align: center
+          font-size: 14px
+          color: $c-text-primary
+
+          @media screen and (max-width: 480px)
+            padding: 10px
+
+          &.ui-state-active
+            background-color: $c-accent-primary
+            color: $c-text-light
+
+          &.ui-state-hover
+            background-color: lighten($c-accent-primary, 10%)
+            color: $c-text-light
+
+          &.ui-state-highlight.ui-state-hover
+            background-color: lighten($c-accent-primary, 10%)
+
+          &.ui-state-active.ui-state-hover
+            background-color: $c-accent-primary
+
+        &.ui-datepicker-other-month
+          background-color: transparent
+
+          & a
+            opacity: 1
+            color: $c-text-faded
+
+            &.ui-state-active,
+            &.ui-state-hover
+              color: $c-text-light
+
+        &.ui-datepicker-current-day
+          & a.ui-state-default,
+          & a.ui-state-hover,
+          & a.ui-state-active
+            background-color: $c-accent-primary
+            color: $c-text-light
