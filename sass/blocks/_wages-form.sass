@@ -36,6 +36,49 @@ $block: ".wages-form"
         line-height: 1
 
 
+  // $Common form panel
+  &__panel
+    display: block
+    width: 100%
+    background-color: $c-bg-light
+    border: 1px solid $c-border-primary
+    box-shadow: 0px 2px 8px 0 $c-shadow-secondary
+
+
+  // $Common form panel header
+  &__panel-header
+    padding: 20px
+    background-color: $c-bg-light
+    border-bottom: 1px solid $c-border-primary
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
+    // $Common form panel header MOD: type marked
+    &_type_marked
+      background-color: $c-gray-hyper-light
+
+
+  // $Common form panel title
+  &__panel-title
+    font-family: $f-sans
+    font-size: 18px
+    line-height: 1
+    font-weight: 400
+    color: $c-text-primary
+
+    @media screen and (max-width: 480px)
+      line-height: 1
+
+
+  // $Common form panel content
+  &__panel-content
+    padding: 20px 20px 30px
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
+
   // $Common form row
   &__row
     display: flex
@@ -59,6 +102,12 @@ $block: ".wages-form"
       @media screen and (max-width: 960px)
         margin-right: 0
         margin-bottom: 0
+
+    &_adjust_delimiter
+      &:not(:last-child)
+        padding-bottom: 30px
+        border-bottom: 1px solid $c-border-secondary
+        margin-bottom: 20px
 
     // $Common form row MOD: justify end
     &_justify_end
@@ -127,28 +176,28 @@ $block: ".wages-form"
         flex-grow: 1
         width: 100%
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           flex-grow: 0
           flex-shrink: 1
           width: 50%
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 480px)
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -164,28 +213,28 @@ $block: ".wages-form"
         flex-grow: 1
         width: 100%
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           flex-grow: 0
           flex-shrink: 1
           width: 33%
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 480px)
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -201,28 +250,28 @@ $block: ".wages-form"
         flex-grow: 1
         width: 100%
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           flex-grow: 0
           flex-shrink: 1
           width: 33%
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 480px)
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -238,28 +287,28 @@ $block: ".wages-form"
         flex-grow: 1
         width: 100%
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           flex-grow: 0
           flex-shrink: 1
           width: 20%
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 480px)
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -275,28 +324,28 @@ $block: ".wages-form"
         flex-grow: 1
         width: 100%
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           flex-grow: 0
           flex-shrink: 1
           width: 16.6%
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 480px)
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -310,22 +359,22 @@ $block: ".wages-form"
       @media screen and (max-width: 960px)
         width: 100%
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           width: auto
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           width: 100%
 
       @media screen and (max-width: 480px)
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           width: 100%
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           width: 100%
 
     // $Common form group MOD: size min
@@ -339,28 +388,28 @@ $block: ".wages-form"
         flex-grow: 1
         width: 100%
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           flex-grow: 0
           flex-shrink: 1
           width: auto
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 480px)
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           flex-shrink: 1
           flex-grow: 1
           width: 100%
@@ -379,34 +428,34 @@ $block: ".wages-form"
         margin-right: 0
         margin-bottom: 30px
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           margin-right: 30px
           margin-bottom: 0
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           margin-right: 0
           margin-bottom: 30px
 
       @media screen and (max-width: 480px)
         margin-bottom: 25px
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-xs > &
           margin-right: 25px
 
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           margin-bottom: 25px
 
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           margin-right: 0
           margin-bottom: 25px
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           margin-right: 0
           margin-bottom: 25px
 
@@ -419,31 +468,31 @@ $block: ".wages-form"
         margin-right: 0
         margin-bottom: 0
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-s-major &,
-        #{$block}__row_adjust_wrap-s-minor &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-s-major > &,
+        #{$block}__row_adjust_wrap-s-minor > &,
+        #{$block}__row_adjust_wrap-xs > &
           margin-right: 0
           margin-bottom: 0
 
       @media screen and (max-width: 640px)
-        #{$block}__row_adjust_wrap-s-major &
+        #{$block}__row_adjust_wrap-s-major > &
           margin-right: 0
           margin-bottom: 0
 
       @media screen and (max-width: 480px)
         margin-bottom: 0
 
-        #{$block}__row_adjust_wrap-s-minor &
+        #{$block}__row_adjust_wrap-s-minor > &
           margin-right: 0
           margin-bottom: 0
 
-        #{$block}__row_adjust_no-wrap &,
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-xs > &
           margin-right: 0
 
       @media screen and (max-width: 400px)
-        #{$block}__row_adjust_wrap-xs &
+        #{$block}__row_adjust_wrap-xs > &
           margin-right: 0
           margin-bottom: 0
 
@@ -471,12 +520,18 @@ $block: ".wages-form"
     justify-content: flex-start
     align-items: center
 
+    &_justify_center
+      justify-content: center
+
 
   // $Common form action
   &__action
     display: block
     flex-grow: 0
     flex-shrink: 1
+
+    &:not(:last-child)
+      margin-right: 20px
 
     // $Common form action MOD: state hidden
     &_state_hidden
