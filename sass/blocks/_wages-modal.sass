@@ -15,11 +15,11 @@
 $block: ".wages-modal"
 
 #{$block}
-  position: relative !important
-  top: auto !important
-  left: auto !important
-  bottom: auto !important
-  right: auto !important
+  position: relative
+  top: auto
+  left: auto
+  bottom: auto
+  right: auto
   display: block
   background-color: $c-bg-light
   border-radius: 10px
@@ -93,21 +93,32 @@ $block: ".wages-modal"
     flex-direction: column
     justify-content: flex-start
     align-items: center
-    height: 100%
     max-height: calc(100vh - 200px)
     margin-top: 100px
     margin-bottom: 100px
     overflow: hidden
+
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      height: calc(100vh - 200px)
 
     @media screen and (max-width: 640px), screen and (max-height: 640px)
       max-height: calc(100vh - 100px)
       margin-top: 50px
       margin-bottom: 50px
 
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), screen and (max-height: 640px)
+      height: calc(100vh - 100px)
+
     @media screen and (max-width: 480px), screen and (max-height: 480px)
       max-height: calc(100vh - 50px)
       margin-top: 25px
       margin-bottom: 25px
+
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), screen and (max-height: 480px)
+      height: calc(100vh - 50px)
 
 
   // $Modal window close
@@ -183,14 +194,17 @@ $block: ".wages-modal"
     &_color_accent-red
       background-color: $c-accent-red
 
+    &_color_accent-orange
+      background-color: $c-accent-orange
+
+    &_color_accent-yellow
+      background-color: $c-accent-yellow
+
     &_color_accent-green
       background-color: $c-accent-green
 
     &_color_accent-blue
       background-color: $c-accent-blue
-
-    &_color_accent-yellow
-      background-color: $c-accent-yellow
 
     &_color_accent-purple
       background-color: $c-accent-purple
@@ -318,9 +332,10 @@ $block: ".wages-modal"
     color: $c-text-primary
 
     #{$block}__header_color_accent-red &,
+    #{$block}__header_color_accent-orange &,
+    #{$block}__header_color_accent-yellow &,
     #{$block}__header_color_accent-green &,
     #{$block}__header_color_accent-blue &,
-    #{$block}__header_color_accent-yellow &,
     #{$block}__header_color_accent-purple &,
     #{$block}__header_color_accent-pink &
       color: $c-text-light
@@ -362,7 +377,7 @@ $block: ".wages-modal"
     font-weight: 400
 
     &:not(:last-child)
-      margin-bottom: 20px
+      margin-bottom: 10px
 
     &_size_s
       font-size: 18px
@@ -404,6 +419,9 @@ $block: ".wages-modal"
     line-height: 1.5
     color: $c-text-primary
     font-weight: 500
+
+    &_size_l
+      font-size: 16px
 
 
   // $Modal window text wrap
@@ -451,13 +469,13 @@ $block: ".wages-modal"
 
     // $Modal window overlay
     &-overlay
-      position: fixed !important
-      top: 0 !important
-      right: 0 !important
-      bottom: 0 !important
-      left: 0 !important
-      z-index: 10001 !important
+      position: fixed
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 10001
       display: block
-      overflow-x: hidden !important
-      overflow-y: auto !important
-      background-color: rgba(0,0,0,.75) !important
+      overflow-x: hidden
+      overflow-y: auto
+      background-color: rgba(0,0,0,.75)
