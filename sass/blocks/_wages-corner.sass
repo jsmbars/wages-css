@@ -197,7 +197,7 @@ $block: ".wages-corner"
       font-size: 18px
       line-height: 18px
       color: $c-text-light
-      vertical-align: middle
+      vertical-align: top
 
     // $Corner icon MOD: size small
     &_size_s
@@ -258,4 +258,18 @@ $block: ".wages-corner"
       &:before
         content: '\ea2f'
         font-size: 16px
+
+    &_text-paper
+      &:before
+        content: '\e927'
+        font-size: 15px
+
+    &_text-paper#{&}_size_s
+      &:before
+        font-size: 13px
+
+    &_text-paper#{&}_size_l
+      &:before
+        font-size: 20px
+
 

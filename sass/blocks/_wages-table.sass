@@ -29,6 +29,10 @@ $block: ".wages-table"
   &_type_common
     display: table
 
+  &_page_wages
+    @media screen and (max-width: 1120px)
+      display: none
+
 
   &__sorting
     position: absolute
@@ -289,27 +293,52 @@ $block: ".wages-table"
 
     // $Common table cell first column
     &:nth-child(1)
+      #{$block}_page_wages &
+        width: 12%
+        padding-left: 15px
 
     // $Common table cell second column
     &:nth-child(2)
+      #{$block}_page_wages &
+        width: 10%
 
     // $Common table cell third column
     &:nth-child(3)
+      #{$block}_page_wages &
+        width: 19%
 
     // $Common table cell fourth column
     &:nth-child(4)
+      #{$block}_page_wages &
+        width: 12%
 
     // $Common table cell fifth column
     &:nth-child(5)
+      #{$block}_page_wages &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 110px
 
     // $Common table cell sixth column
     &:nth-child(6)
+      #{$block}_page_wages &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 105px
 
     // $Common table cell seventh column
     &:nth-child(7)
+      #{$block}_page_wages &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 130px
 
     // $Common table cell eighth column
     &:nth-child(8)
+      #{$block}_page_wages &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 125px
 
     // $Common table cell ninth column
     &:nth-child(9)

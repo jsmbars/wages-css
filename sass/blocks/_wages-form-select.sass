@@ -39,6 +39,24 @@ $block: ".wages-form-select"
 
   &_adjust_clear
 
+  &_adjust_dashboard
+
+  &_highlight_accent-red-light
+
+  &_highlight_accent-orange-light
+
+  &_highlight_accent-yellow-light
+
+  &_highlight_accent-green-light
+
+  &_highlight_accent-blue-light
+
+  &_highlight_accent-purple-light
+
+  &_highlight_accent-pink-light
+
+  &_highlight_gray-light
+
 
   // $Common form select label
   &__label
@@ -50,6 +68,13 @@ $block: ".wages-form-select"
     color: $c-text-primary
     font-weight: 600
     line-height: 1
+    text-align: left
+
+    #{$block}_justify_center &
+      text-align: center
+
+    #{$block}_justify_end &
+      text-align: right
 
     // $Common form select label text CONTEXT: $Common form select MOD: role control
     #{$block}_role_control &,
@@ -96,6 +121,14 @@ $block: ".wages-form-select"
     &_size_s
       font-size: 12px
 
+    // $Common form select label MOD: size large
+    &_size_l
+      font-size: 16px
+
+    // $Common form field label MOD: size extra large
+    &_size_xl
+      font-size: 18px
+
     // $Common form select label MOD: no wrap
     &_adjust_no-wrap
       white-space: nowrap
@@ -111,6 +144,10 @@ $block: ".wages-form-select"
         border: 1px solid $c-border-primary
         border-radius: 2px
         white-space: nowrap
+
+        @media screen and (max-width: 960px)
+          padding-right: 10px
+          padding-left: 10px
 
       #{$block}_role_control &
         border-right: none
@@ -135,6 +172,16 @@ $block: ".wages-form-select"
     font-weight: 400
     font-size: inherit
     color: inherit
+
+
+  // $Common form select tags
+  &__tags
+    display: block
+    width: 100%
+
+
+  // $Common form select tag
+  &__tag
 
 
   // $Common form select control
@@ -186,6 +233,38 @@ $block: ".wages-form-select"
       -webkit-appearance: none
       transition: all .3s
 
+      #{$block}_highlight_accent-red-light &
+        background-color: $c-accent-red-light
+        border-color: $c-accent-red
+
+      #{$block}_highlight_accent-orange-light &
+        background-color: $c-accent-orange-light
+        border-color: $c-accent-orange
+
+      #{$block}_highlight_accent-yellow-light &
+        background-color: $c-accent-yellow-light
+        border-color: $c-accent-yellow
+
+      #{$block}_highlight_accent-green-light &
+        background-color: $c-accent-green-light
+        border-color: $c-accent-green
+
+      #{$block}_highlight_accent-blue-light &
+        background-color: $c-accent-blue-light
+        border-color: $c-accent-blue
+
+      #{$block}_highlight_accent-purple-light &
+        background-color: $c-accent-purple-light
+        border-color: $c-accent-purple
+
+      #{$block}_highlight_accent-pink-light &
+        background-color: $c-accent-pink-light
+        border-color: $c-accent-pink
+
+      #{$block}_highlight_gray-light &
+        background-color: $c-gray-ultra-light
+        border-color: $c-border-primary
+
       #{$block}_state_error &
         border-color: $c-accent-red
         color: $c-accent-red
@@ -205,7 +284,7 @@ $block: ".wages-form-select"
         color: $c-text-primary
 
       &:disabled
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
         cursor: not-allowed
 
     // $Common form select option
@@ -221,11 +300,122 @@ $block: ".wages-form-select"
       outline: none
       border: none
 
+    &_size_s
+      & select
+        padding-top: 14px
+        padding-bottom: 14px
+        font-size: 12px
+
+    &_size_l
+      & select
+        padding-top: 12px
+        padding-bottom: 12px
+        font-size: 16px
+
+    &_size_xl
+      & select
+        padding-top: 11px
+        padding-bottom: 11px
+        font-size: 18px
+
+
+  // $Common form select box
+  &__box
+    width: 100%
+    min-height: 50px
+    padding: 13px 10px
+    font-family: $f-sans
+    font-size: 14px
+    color: $c-text-primary
+    font-weight: 400
+    line-height: 1.5
+    background-color: $c-bg-light
+    border: 1px solid $c-border-primary
+    border-radius: 2px
+    cursor: default
+
+    #{$block}_highlight_accent-red-light &
+      background-color: $c-accent-red-light
+      border-color: $c-accent-red
+
+    #{$block}_highlight_accent-orange-light &
+      background-color: $c-accent-orange-light
+      border-color: $c-accent-orange
+
+    #{$block}_highlight_accent-yellow-light &
+      background-color: $c-accent-yellow-light
+      border-color: $c-accent-yellow
+
+    #{$block}_highlight_accent-green-light &
+      background-color: $c-accent-green-light
+      border-color: $c-accent-green
+
+    #{$block}_highlight_accent-blue-light &
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue
+
+    #{$block}_highlight_accent-purple-light &
+      background-color: $c-accent-purple-light
+      border-color: $c-accent-purple
+
+    #{$block}_highlight_accent-pink-light &
+      background-color: $c-accent-pink-light
+      border-color: $c-accent-pink
+
+    #{$block}_highlight_gray-light &
+      background-color: $c-gray-ultra-light
+      border-color: $c-border-primary
+
+    #{$block}_state_error &
+      border-color: $c-accent-red
+      color: $c-accent-red
+
+    &_size_s
+      padding-top: 14px
+      padding-bottom: 14px
+      font-size: 12px
+
+    &_size_l
+      padding-top: 12px
+      padding-bottom: 12px
+      font-size: 16px
+
+    &_size_xl
+      padding-top: 11px
+      padding-bottom: 11px
+      font-size: 18px
+
+
+  // $Common form select value
+  &__value
+    width: 100%
+    font-family: $f-sans
+    font-size: 18px
+    color: $c-text-primary
+    font-weight: 600
+    line-height: 1.5
+    background-color: transparent
+    cursor: default
+
+    #{$block}_justify_center &
+      justify-content: center
+      text-align: center
+
+    #{$block}_justify_end &
+      justify-content: flex-end
+      text-align: right
+
+    #{$block}_state_error &
+      color: $c-accent-red
+
 
   // $Common form select react select component wrap
   &__component
     display: block
     width: 100%
+
+    #{$block}_adjust_dashboard &
+      min-width: 200px
 
 
   // $Common form select note

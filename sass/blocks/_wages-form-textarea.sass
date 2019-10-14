@@ -26,6 +26,22 @@ $block: ".wages-form-textarea"
   &_adjust_no-label
     padding-top: 20px
 
+  &_highlight_accent-red-light
+
+  &_highlight_accent-orange-light
+
+  &_highlight_accent-yellow-light
+
+  &_highlight_accent-green-light
+
+  &_highlight_accent-blue-light
+
+  &_highlight_accent-purple-light
+
+  &_highlight_accent-pink-light
+
+  &_highlight_gray-light
+
 
   // $Common form textarea label
   &__label
@@ -37,12 +53,25 @@ $block: ".wages-form-textarea"
     color: $c-text-primary
     font-weight: 600
     line-height: 1
+    text-align: left
 
     // $Common form textarea label-text CONTEXT: $Common form textarea MOD: type required field
     #{$block}_type_required &
       &:after
         content: '*'
         margin-left: 2px
+
+    // $Common form textarea label MOD: size small
+    &_size_s
+      font-size: 12px
+
+    // $Common form textarea label MOD: size large
+    &_size_l
+      font-size: 16px
+
+    // $Common form textarea label MOD: size extra large
+    &_size_xl
+      font-size: 18px
 
 
   // $Common form textarea label text
@@ -74,6 +103,38 @@ $block: ".wages-form-textarea"
       box-shadow: none
       background-color: $c-bg-light
 
+      #{$block}_highlight_accent-red-light &
+        background-color: $c-accent-red-light
+        border-color: $c-accent-red
+
+      #{$block}_highlight_accent-orange-light &
+        background-color: $c-accent-orange-light
+        border-color: $c-accent-orange
+
+      #{$block}_highlight_accent-yellow-light &
+        background-color: $c-accent-yellow-light
+        border-color: $c-accent-yellow
+
+      #{$block}_highlight_accent-green-light &
+        background-color: $c-accent-green-light
+        border-color: $c-accent-green
+
+      #{$block}_highlight_accent-blue-light &
+        background-color: $c-accent-blue-light
+        border-color: $c-accent-blue
+
+      #{$block}_highlight_accent-purple-light &
+        background-color: $c-accent-purple-light
+        border-color: $c-accent-purple
+
+      #{$block}_highlight_accent-pink-light &
+        background-color: $c-accent-pink-light
+        border-color: $c-accent-pink
+
+      #{$block}_highlight_gray-light &
+        background-color: $c-gray-ultra-light
+        border-color: $c-border-primary
+
       #{$block}_state_error &
         border-color: $c-accent-red
         color: $c-accent-red
@@ -86,11 +147,11 @@ $block: ".wages-form-textarea"
         box-shadow: 0 0 3px -1px $c-accent-blue
 
       &:disabled
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
         cursor: not-allowed
 
       &:read-only
-        background-color: $c-bg-secondary
+        background-color: $c-gray-ultra-light
 
       &::-webkit-input-placeholder
         color: $c-text-faded !important
@@ -140,6 +201,103 @@ $block: ".wages-form-textarea"
 
         #{$block}_state_error &
           color: $c-accent-red !important
+
+    &_size_s
+      & textarea
+        font-size: 12px
+
+    &_size_l
+      & textarea
+        font-size: 16px
+
+    &_size_xl
+      & textarea
+        font-size: 18px
+
+
+  // $Common form textarea box
+  &__box
+    width: 100%
+    min-height: 100px
+    padding: 15px 10px
+    font-family: $f-sans
+    font-size: 14px
+    color: $c-text-primary
+    font-weight: 400
+    line-height: 1.5
+    background-color: $c-bg-light
+    border: 1px solid $c-border-primary
+    border-radius: 2px
+    cursor: default
+
+    #{$block}_highlight_accent-red-light &
+      background-color: $c-accent-red-light
+      border-color: $c-accent-red
+
+    #{$block}_highlight_accent-orange-light &
+      background-color: $c-accent-orange-light
+      border-color: $c-accent-orange
+
+    #{$block}_highlight_accent-yellow-light &
+      background-color: $c-accent-yellow-light
+      border-color: $c-accent-yellow
+
+    #{$block}_highlight_accent-green-light &
+      background-color: $c-accent-green-light
+      border-color: $c-accent-green
+
+    #{$block}_highlight_accent-blue-light &
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue
+
+    #{$block}_highlight_accent-purple-light &
+      background-color: $c-accent-purple-light
+      border-color: $c-accent-purple
+
+    #{$block}_highlight_accent-pink-light &
+      background-color: $c-accent-pink-light
+      border-color: $c-accent-pink
+
+    #{$block}_highlight_gray-light &
+      background-color: $c-gray-ultra-light
+      border-color: $c-border-primary
+
+    #{$block}_state_error &
+      border-color: $c-accent-red
+      color: $c-accent-red
+
+    &_size_s
+      font-size: 12px
+
+    &_size_l
+      font-size: 16px
+
+    &_size_xl
+      font-size: 18px
+
+
+  // $Common form textarea value
+  &__value
+    width: 100%
+    font-family: $f-sans
+    font-size: 18px
+    color: $c-text-primary
+    font-weight: 600
+    line-height: 1.5
+    background-color: transparent
+    cursor: default
+
+    #{$block}_justify_center &
+      justify-content: center
+      text-align: center
+
+    #{$block}_justify_end &
+      justify-content: flex-end
+      text-align: right
+
+    #{$block}_state_error &
+      color: $c-accent-red
+
 
 
   // $Common form textarea note

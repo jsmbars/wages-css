@@ -333,6 +333,40 @@ $block: ".wages-page-main"
       margin-bottom: 20px
 
 
+  // $Page main service area
+  &__service
+    display: block
+    width: 100%
+
+    // $Page main service area MOD: type board
+    &_type_board
+      padding: 20px
+      margin-bottom: 20px
+      background-color: $c-bg-light
+
+      @media screen and (max-width: 480px)
+        padding: 20px 15px
+
+    // $Page main service area MOD: position sticky top
+    &_position_sticky-top
+      position: sticky
+      z-index: 1000
+      top: 0
+      box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2)
+
+      // Set default position in Edge
+      @supports (-ms-ime-align: auto)
+        position: static
+        z-index: auto
+        top: auto
+
+      // Set default position in IE11
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+        position: static
+        z-index: auto
+        top: auto
+
+
   // $Page main text placeholder
   &__text-placeholder
     font-family: $f-sans
